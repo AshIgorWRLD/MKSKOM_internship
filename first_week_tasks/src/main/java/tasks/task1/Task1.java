@@ -21,16 +21,61 @@ public class Task1 implements Task {
         int[] array = new int[arrayLength];
         Random random = new Random(System.currentTimeMillis());
         for(int i = 0; i < arrayLength; i++){
-            array[i] = random.nextInt();
+            array[i] = random.nextInt()%1000;
         }
         return array;
+    }
+
+    private void printArray(int[] array){
+        for(int i = 0; i < array.length; i++){
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
+    }
+
+    private void findInfo(int[] array){
+        int maxValue = array[0];
+        int minValue = array[0];
+        int sum = array[0];
+        for(int i = 1; i < arrayLength; i++){
+            if(array[i] > maxValue){
+                maxValue = array[i];
+            }
+            if(array[i] < minValue){
+                minValue = array[i];
+            }
+            sum += array[i];
+        }
+        System.out.println("Max value " + maxValue + "\nMin value " + minValue +
+                "\nMedium value " + (double)sum/arrayLength);
+        bubbleSort(array);
+        printArray(array);
+    }
+
+    private void bubbleSort(int[] array){
+
+
+        boolean isEnd = false;
+        while(!isEnd){
+            isEnd = true;
+            for(int i = 0; i < array.length-1; i++){
+                if(array[i] > array[i+1]){
+                    isEnd = false;
+                    int tmp = array[i+1];
+                    array[i+1] = array[i];
+                    array[i] = tmp;
+                }
+            }
+        }
     }
 
     public void doTask(){
         int[] array = initArray();
         if(null == array){
-
+            log.info("WRONG ARRAY LENGTH");
+            return;
         }
-
+        printArray(array);
+        findInfo(array);
     }
 }
