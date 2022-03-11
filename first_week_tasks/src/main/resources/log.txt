@@ -1,0 +1,6 @@
+11-03-2022 19:23:52 ERROR [main] (Task3.java:37) - FILE NOT FOUND EXCEPTION
+java.io.FileNotFoundException
+	at tasks.task3.Task3.startCounter(Task3.java:23)
+	at tasks.task3.Task3.doTask(Task3.java:35)
+	at Main.doTask(Main.java:18)
+	at Main.main(Main.java:14)

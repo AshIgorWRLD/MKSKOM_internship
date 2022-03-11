@@ -5,7 +5,7 @@ import tasks.task3.Task3;
 
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Task1 task1 = new Task1(15);
         Task2 task2 = new Task2();
         Task3 task3 = new Task3();
@@ -14,7 +14,7 @@ public class Main {
         doTask(task3);
     }
 
-    private static void doTask(Task task){
+    private static void doTask(Task task) {
         task.doTask();
     }
 }

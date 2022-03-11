@@ -14,28 +14,19 @@ public class Task3 implements Task {
     private static final int SECOND_BORDER = 1003;
     private static final int THIRD_BORDER = 1006;
 
-    private class ThreadTask extends Thread{
-
-        @SneakyThrows
-        @Override
-        synchronized public void run() {
-            Random random = new Random(System.currentTimeMillis());
-            int counter = 0;
-            while (true){
-                counter += random.nextInt()%10;
-                if(FIRST_BORDER <= counter && SECOND_BORDER > counter){
-                    throw new FileNotFoundException();
-                }else if(SECOND_BORDER <= counter && THIRD_BORDER > counter){
-                    throw new InterruptedException();
-                }else if(THIRD_BORDER <= counter){
-                    throw new ClassNotFoundException();
-                }
+    private void startCounter() throws FileNotFoundException, ClassNotFoundException, InterruptedException {
+        Random random = new Random(System.currentTimeMillis());
+        int counter = 0;
+        while (true) {
+            counter += random.nextInt() % 10;
+            if (FIRST_BORDER <= counter && SECOND_BORDER > counter) {
+                throw new FileNotFoundException();
+            } else if (SECOND_BORDER <= counter && THIRD_BORDER > counter) {
+                throw new InterruptedException();
+            } else if (THIRD_BORDER <= counter) {
+                throw new ClassNotFoundException();
             }
         }
-    }
-
-    private void startCounter() throws FileNotFoundException, ClassNotFoundException, InterruptedException {
-        new ThreadTask().start();
     }
 
     @Override

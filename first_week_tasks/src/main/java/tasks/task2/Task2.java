@@ -4,10 +4,6 @@ import tasks.Task;
 
 public class Task2 implements Task {
 
-    public Task2(){
-
-    }
-
     @Override
     public void doTask() {
         Vector[] basis = Vector.getBasis(10);
