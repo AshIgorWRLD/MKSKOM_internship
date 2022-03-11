@@ -15,16 +15,9 @@ public class Vector {
     private static final String STRING_SEPARATOR = ",";
     private static final String NUMBER_SEPARATOR = ".";
 
-    private static double takeFormattedDouble(double number) {
-        DecimalFormat decimalFormat = new DecimalFormat("#.###");
-        String str = decimalFormat.format(number);
-        String[] subStr = str.split(STRING_SEPARATOR);
-        if (subStr.length > 1) {
-            String newNumber = subStr[0] + NUMBER_SEPARATOR + subStr[1];
-            return Double.parseDouble(newNumber);
-        }
-        return number;
-    }
+    private double x;
+    private double y;
+    private double z;
 
     public static Vector[] getBasis(int amount) {
         Random random = new Random(System.currentTimeMillis());
@@ -54,9 +47,16 @@ public class Vector {
         }
     }
 
-    private double x;
-    private double y;
-    private double z;
+    private static double takeFormattedDouble(double number) {
+        DecimalFormat decimalFormat = new DecimalFormat("#.###");
+        String str = decimalFormat.format(number);
+        String[] subStr = str.split(STRING_SEPARATOR);
+        if (subStr.length > 1) {
+            String newNumber = subStr[0] + NUMBER_SEPARATOR + subStr[1];
+            return Double.parseDouble(newNumber);
+        }
+        return number;
+    }
 
     public double getLength() {
         return Math.sqrt(x + y + z);

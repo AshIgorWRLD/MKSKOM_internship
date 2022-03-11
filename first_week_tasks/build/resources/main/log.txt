@@ -10,9 +10,3 @@ java.io.FileNotFoundException
 	at tasks.task3.Task3.doTask(Task3.java:35)
 	at Main.doTask(Main.java:18)
 	at Main.main(Main.java:14)
-11-03-2022 19:05:50 ERROR [main] (Task3.java:41) - INTERRUPTED EXCEPTION
-java.lang.InterruptedException
-	at tasks.task3.Task3.startCounter(Task3.java:25)
-	at tasks.task3.Task3.doTask(Task3.java:35)
-	at Main.doTask(Main.java:18)
-	at Main.main(Main.java:14)
