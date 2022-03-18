@@ -1,0 +1,42 @@
+17-03-2022 18:01:13 ERROR [main] (Task3.java:39) - NO ELEMENT > 50
+java.lang.RuntimeException: NO SUCH ELEMENT
+	at tasks.task3.Task3.lambda$findFirstAbove50Element$1(Task3.java:37)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at tasks.task3.Task3.findFirstAbove50Element(Task3.java:37)
+	at tasks.task3.Task3.doTask(Task3.java:47)
+	at Main.main(Main.java:19)
+17-03-2022 18:49:25 ERROR [main] (Task3.java:39) - NO ELEMENT > 50
+java.lang.RuntimeException: NO SUCH ELEMENT
+	at tasks.task3.Task3.lambda$findFirstAbove50Element$1(Task3.java:37)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at tasks.task3.Task3.findFirstAbove50Element(Task3.java:37)
+	at tasks.task3.Task3.doTask(Task3.java:55)
+	at Main.main(Main.java:19)
+17-03-2022 18:49:32 ERROR [main] (Task3.java:39) - NO ELEMENT > 50
+java.lang.RuntimeException: NO SUCH ELEMENT
+	at tasks.task3.Task3.lambda$findFirstAbove50Element$1(Task3.java:37)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at tasks.task3.Task3.findFirstAbove50Element(Task3.java:37)
+	at tasks.task3.Task3.doTask(Task3.java:55)
+	at Main.main(Main.java:19)
+18-03-2022 15:51:52 ERROR [main] (Task3.java:73) - NO ELEMENT == 77
+java.lang.RuntimeException: No77ElementException
+	at tasks.task3.Task3.lambda$find77NumberWithException$6(Task3.java:71)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at tasks.task3.Task3.find77NumberWithException(Task3.java:71)
+	at tasks.task3.Task3.doTask(Task3.java:89)
+	at Main.main(Main.java:19)
+18-03-2022 15:53:10 ERROR [main] (Task3.java:74) - NO ELEMENT == 77
+java.lang.RuntimeException: No77ElementException
+	at tasks.task3.Task3.lambda$find77NumberWithException$6(Task3.java:72)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at tasks.task3.Task3.find77NumberWithException(Task3.java:72)
+	at tasks.task3.Task3.doTask(Task3.java:90)
+	at Main.main(Main.java:19)
+18-03-2022 15:53:26 ERROR [main] (Task3.java:74) - NO ELEMENT == 77
+java.lang.RuntimeException: No77ElementException
+	at tasks.task3.Task3.lambda$find77NumberWithException$6(Task3.java:72)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at tasks.task3.Task3.find77NumberWithException(Task3.java:72)
+	at tasks.task3.Task3.doTask(Task3.java:90)
+	at Main.main(Main.java:19)
