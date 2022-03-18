@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 11-03-2022 19:05:18 ERROR [main] (Task3.java:57) - FILE NOT FOUND EXCEPTION
 java.io.FileNotFoundException
 	at tasks.task3.Task3.startCounter(Task3.java:43)
@@ -5,14 +6,20 @@ java.io.FileNotFoundException
 	at Main.doTask(Main.java:18)
 	at Main.main(Main.java:14)
 11-03-2022 19:05:47 ERROR [main] (Task3.java:37) - FILE NOT FOUND EXCEPTION
+=======
+11-03-2022 19:23:52 ERROR [main] (Task3.java:37) - FILE NOT FOUND EXCEPTION
+>>>>>>> 4ff6b39497ac593223c353f3284c9b1cba253fd5
 java.io.FileNotFoundException
 	at tasks.task3.Task3.startCounter(Task3.java:23)
 	at tasks.task3.Task3.doTask(Task3.java:35)
 	at Main.doTask(Main.java:18)
 	at Main.main(Main.java:14)
+<<<<<<< HEAD
 11-03-2022 19:05:50 ERROR [main] (Task3.java:41) - INTERRUPTED EXCEPTION
 java.lang.InterruptedException
 	at tasks.task3.Task3.startCounter(Task3.java:25)
 	at tasks.task3.Task3.doTask(Task3.java:35)
 	at Main.doTask(Main.java:18)
 	at Main.main(Main.java:14)
+=======
+>>>>>>> 4ff6b39497ac593223c353f3284c9b1cba253fd5
