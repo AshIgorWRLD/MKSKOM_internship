@@ -11,8 +11,8 @@ public class Task2 {
         return random.nextInt() % 100;
     }
 
-    private <T> String[] fill(T[] array) {
-        Function<T, String> converter = x -> "ELEMENT " + x.toString() + ": " + randomNumber();
+    private <T> String[] fill(T[] array, Function<T, String> converter) {
+        //Function<T, String> converter = x -> "ELEMENT " + x.toString() + ": " + randomNumber();
         String[] newArray = new String[array.length];
         for (int i = 0; i < array.length; i++) {
             newArray[i] = converter.apply(array[i]);
@@ -29,6 +29,7 @@ public class Task2 {
     }
 
     public <T> void doTask(T[] array) {
-        printNewArray(fill(array));
+        printNewArray(fill(array,
+                x -> "ELEMENT " + x.toString() + ": " + randomNumber()));
     }
 }

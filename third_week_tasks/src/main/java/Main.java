@@ -9,14 +9,16 @@ public class Main {
 
     public static void main(String[] args) {
         Task1 task1 = new Task1();
-        task1.doTask(createMap(new String[]{"kanye", "drake", "mom"}),
-                createMap(new String[]{"kanye", "jay z", "dad"}));
+        //task1.doTask(createMap(new String[]{"kanye", "drake", "mom"}),
+          //      createMap(new String[]{"kanye", "jay z", "dad"}));
 
         Task2 task2 = new Task2();
-        task2.doTask(createIntArray(5));
+        //task2.doTask(createIntArray(5));
 
         Task3 task3 = new Task3();
         task3.doTask();
+
+
     }
 
     private static Integer[] createIntArray(int length){
