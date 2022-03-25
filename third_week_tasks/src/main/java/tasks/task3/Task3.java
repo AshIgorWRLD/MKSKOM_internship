@@ -57,8 +57,8 @@ public class Task3 {
         return (double) (list.stream().mapToInt(x -> x).sum()) / list.size();
     }
 
-    private Integer x2(Integer number) {
-        return number * 2;
+    private void x2(Integer number) {
+        number *= 2;
     }
 
     private double x2Sum(List<Integer> list) {

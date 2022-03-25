@@ -33,3 +33,10 @@ java.lang.RuntimeException: No77ElementException
 	at tasks.task3.Task3.find77NumberWithException(Task3.java:72)
 	at tasks.task3.Task3.doTask(Task3.java:90)
 	at Main.main(Main.java:19)
+18-03-2022 15:53:26 ERROR [main] (Task3.java:74) - NO ELEMENT == 77
+java.lang.RuntimeException: No77ElementException
+	at tasks.task3.Task3.lambda$find77NumberWithException$6(Task3.java:72)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at tasks.task3.Task3.find77NumberWithException(Task3.java:72)
+	at tasks.task3.Task3.doTask(Task3.java:90)
+	at Main.main(Main.java:19)

@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 public class Main {
 
     public static void main(String[] args) {
-        Task1 task1 = new Task1();
+        /*Task1 task1 = new Task1();
         task1.doTask(createMap(new String[]{"kanye", "drake", "mom"}),
                 createMap(new String[]{"kanye", "jay z", "dad"}));
 
@@ -16,7 +16,12 @@ public class Main {
         task2.doTask(createIntArray(5));
 
         Task3 task3 = new Task3();
-        task3.doTask();
+
+       task3.doTask();
+         */
+        String string = null;
+        System.out.println(Optional.ofNullable(string).orElse("asa"));
+
     }
 
     private static Integer[] createIntArray(int length){
