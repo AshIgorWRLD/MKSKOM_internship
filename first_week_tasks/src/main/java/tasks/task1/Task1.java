@@ -53,11 +53,6 @@ public class Task1 implements Task {
     }
 
     private void bubbleSort(int[] array) {
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 4ff6b39497ac593223c353f3284c9b1cba253fd5
         boolean isEnd = false;
         while (!isEnd) {
             isEnd = true;

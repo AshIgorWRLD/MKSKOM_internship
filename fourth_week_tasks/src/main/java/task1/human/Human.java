@@ -7,7 +7,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Human {
+public class Human implements Cloneable<Human>{
 
     protected int age;
     protected Gender gender;
@@ -17,4 +17,9 @@ public class Human {
         System.out.println("Name: " + name + "; Gender: " + gender + "; Age " + age);
     }
 
+
+    @Override
+    public Human clone() {
+        return new Human(age, gender, name);
+    }
 }

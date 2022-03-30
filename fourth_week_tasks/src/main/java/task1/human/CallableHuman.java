@@ -61,4 +61,12 @@ public class CallableHuman extends Human{
         System.out.println("Name: " + name + "; Gender: " + gender + "; Age " + age + " " +
                 makePhoneNumbersString());
     }
+
+
+    @Override
+    public CallableHuman clone() {
+        CallableHuman newHuman = new CallableHuman(age, gender, name);
+        phoneNumbers.forEach(newHuman::addPhoneNumber);
+        return newHuman;
+    }
 }

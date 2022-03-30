@@ -14,16 +14,18 @@ import java.util.Objects;
 
 public class Task1 {
 
-    private final Sortable<Human> sortable1;
-    private final Sortable<Human> sortable2;
-    private final Sortable<Human> sortable3;
     private final Comparator<Human> humanComparator;
 
     public Task1() {
         humanComparator = generateHumanComparator();
-        sortable1 = generateStreamSortable();
-        sortable2 = generateQuickSortSortable();
-        sortable3 = generateInsertionSortSortable();
+    }
+
+    public void sort(Sortable<Human> sortable, List<Human> humanList){
+        long startTime = System.currentTimeMillis();
+        sortable.sort(humanList);
+        long endTime = System.currentTimeMillis();
+        System.out.println("-------------------------------\nTime for SORT2: " +
+                (endTime - startTime) + " ms\n-------------------------------");
     }
 
     private Sortable<Human> generateStreamSortable() {
@@ -119,30 +121,6 @@ public class Task1 {
         return humanList;
     }
 
-    private void sort1(List<Human> humanList) {
-        long startTime = System.currentTimeMillis();
-        sortable1.sort(humanList);
-        long endTime = System.currentTimeMillis();
-        System.out.println("-------------------------------\nTime for SORT1: " +
-                (endTime - startTime) + " ms\n-------------------------------");
-    }
-
-    private void sort2(List<Human> humanList) {
-        long startTime = System.currentTimeMillis();
-        sortable2.sort(humanList);
-        long endTime = System.currentTimeMillis();
-        System.out.println("-------------------------------\nTime for SORT2: " +
-                (endTime - startTime) + " ms\n-------------------------------");
-    }
-
-    private void sort3(List<Human> humanList) {
-        long startTime = System.currentTimeMillis();
-        sortable3.sort(humanList);
-        long endTime = System.currentTimeMillis();
-        System.out.println("-------------------------------\nTime for SORT3: " +
-                (endTime - startTime) + " ms\n-------------------------------");
-    }
-
     private void testCallableHuman(){
         List<CallableHuman> callableHumanList = createCallableHumanList();
         System.out.println("----------------------------------\nCALLABLE HUMAN LIST 1 ITERATION\n");
@@ -177,11 +155,11 @@ public class Task1 {
                 ----------------------1.1----------------------
                 -----------------------------------------------
                 """);
-        sort1(createHumanList());
+        sort(generateStreamSortable(), createHumanList());
         System.out.println("----------------------");
-        sort2(createHumanList());
+        sort(generateQuickSortSortable(), createHumanList());
         System.out.println("----------------------");
-        sort3(createHumanList());
+        sort(generateInsertionSortSortable(), createHumanList());
         System.out.println("""
 
                 -----------------------------------------------
@@ -197,5 +175,16 @@ public class Task1 {
                 -----------------------------------------------
                 """);
         testCallableHuman();
+
+        List<Human> humanList = createHumanList();
+        Human human1 = humanList.get(2);
+        Human human2 = human1.clone();
+        human1.print();
+        human2.print();
+        List<CallableHuman> callableHumanList = createCallableHumanList();
+        CallableHuman callableHuman1 = callableHumanList.get(1);
+        CallableHuman callableHuman2 = callableHuman1.clone();
+        callableHuman1.print();
+        callableHuman2.print();
     }
 }
