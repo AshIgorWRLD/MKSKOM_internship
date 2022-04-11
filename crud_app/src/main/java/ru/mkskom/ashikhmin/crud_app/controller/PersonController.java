@@ -1,17 +1,25 @@
 package ru.mkskom.ashikhmin.crud_app.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import ru.mkskom.ashikhmin.crud_app.dao.PersonDAO;
 import ru.mkskom.ashikhmin.crud_app.exceptions.NotFoundException;
 import ru.mkskom.ashikhmin.crud_app.model.Person;
+import ru.mkskom.ashikhmin.crud_app.service.impl.PersonServiceImpl;
 
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequestMapping("people")
 public class PersonController {
 
     private PersonDAO people = new PersonDAO();
+    private final PersonServiceImpl personService;
+
+    public PersonController(PersonServiceImpl personService) {
+        this.personService = personService;
+    }
 
     @GetMapping
     public List<Person> list(){
@@ -28,7 +36,12 @@ public class PersonController {
 
     @PostMapping
     public Person create(@RequestBody Person person){
+        log.info("request for creating person with parameters {}", person);
+
+        personService.create(person);
+
         people.add(person);
+
         return person;
     }
 
