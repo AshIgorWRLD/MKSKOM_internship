@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-test_db.yaml
+  - changeSet:
+      id: 1
+      author: postgres
+      password: 123
+      changes:
+        - createTable:
+            tableName: people
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(20)
+                  constraints:
+                    unique: false
+                    nullable: false
+              - column:
+                  name: login
+                  type: varchar(30)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: password
+                  type: varchar(30)
+                  constraints:
+                    nullable: false
+        - insert:
+            tableName: people
+            columns:
+              - column:
+                  name: name
+                  value: "Weekend"
+              - column:
+                  name: login
+                  value: "Week123"
+              - column:
+                  name: password
+                  value: "kendrick123"
