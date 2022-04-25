@@ -1,10 +1,6 @@
 databaseChangeLog:
-  - logicalFilePath: db/changelog/db.changelog-test_db.yaml
-  - changeSet:
-      id: 1
-      author: postgres
-      password: 123
-      changes:
-        - yamlFile:
-            encoding: utf8
-            path: classpath:db/changelog/tables/people.yaml
+  - logicalFilePath: db/changelog/db.changelog-master.yaml
+  - include:
+      file: db/changelog/table/creation/create_people_table.yaml
+  - include:
+      file: db/changelog/table/insertion/insert_people_table.yaml

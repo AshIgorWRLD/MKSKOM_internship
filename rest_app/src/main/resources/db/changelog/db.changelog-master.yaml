@@ -1,0 +1,6 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-master.yaml
+  - include:
+      file: db/changelog/table/creation/create_song_table.yaml
+  - include:
+      file: db/changelog/table/insertion/insert_song_table.yaml

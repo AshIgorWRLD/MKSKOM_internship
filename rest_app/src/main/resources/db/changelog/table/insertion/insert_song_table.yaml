@@ -1,0 +1,111 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert_songs
+      author: postgres
+      password: 123
+      changes:
+        - insert:
+            tableName: songs
+            columns:
+              - column:
+                  name: name
+                  value: "Heartless"
+              - column:
+                  name: author
+                  value: "Kanye West"
+              - column:
+                  name: length
+                  value: "03:31"
+              - column:
+                  name: login
+                  value: "Week123"
+        - insert:
+            tableName: songs
+            columns:
+              - column:
+                  name: name
+                  value: "Runaway"
+              - column:
+                  name: author
+                  value: "Kanye West"
+              - column:
+                  name: length
+                  value: "09:07"
+              - column:
+                  name: login
+                  value: "igash888"
+        - insert:
+            tableName: songs
+            columns:
+              - column:
+                  name: name
+                  value: "I'm Gonna Be"
+              - column:
+                  name: author
+                  value: "Post Malone"
+              - column:
+                  name: length
+                  value: "03:20"
+              - column:
+                  name: login
+                  value: "igash888"
+        - insert:
+            tableName: songs
+            columns:
+              - column:
+                  name: name
+                  value: "B.I.D"
+              - column:
+                  name: author
+                  value: "Markul"
+              - column:
+                  name: length
+                  value: "03:12"
+              - column:
+                  name: login
+                  value: "tanyad2702"
+        - insert:
+            tableName: songs
+            columns:
+              - column:
+                  name: name
+                  value: "The Brightside"
+              - column:
+                  name: author
+                  value: "Lil Peep"
+              - column:
+                  name: length
+                  value: "03:36"
+              - column:
+                  name: login
+                  value: "tanyad2702"
+        - insert:
+            tableName: songs
+            columns:
+              - column:
+                  name: name
+                  value: "Good News"
+              - column:
+                  name: author
+                  value: "Mac Miller"
+              - column:
+                  name: length
+                  value: "05:42"
+              - column:
+                  name: login
+                  value: "igash888"
+        - insert:
+            tableName: songs
+            columns:
+              - column:
+                  name: name
+                  value: "Panda"
+              - column:
+                  name: author
+                  value: "Desiigner"
+              - column:
+                  name: length
+                  value: "04:06"
+              - column:
+                  name: login
+                  value: "Salex2608"

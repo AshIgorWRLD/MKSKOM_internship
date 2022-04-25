@@ -1,0 +1,54 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert_people
+      author: postgres
+      password: 123
+      changes:
+        - insert:
+            tableName: people
+            columns:
+              - column:
+                  name: name
+                  value: "Weekend"
+              - column:
+                  name: login
+                  value: "Week123"
+              - column:
+                  name: password
+                  value: "kendrick123"
+        - insert:
+            tableName: people
+            columns:
+              - column:
+                  name: name
+                  value: "Igor"
+              - column:
+                  name: login
+                  value: "igash888"
+              - column:
+                  name: password
+                  value: "sadfsad325"
+        - insert:
+            tableName: people
+            columns:
+              - column:
+                  name: name
+                  value: "Tanya"
+              - column:
+                  name: login
+                  value: "tanyad2702"
+              - column:
+                  name: password
+                  value: "qwer12wqe"
+        - insert:
+            tableName: people
+            columns:
+              - column:
+                  name: name
+                  value: "Alexander"
+              - column:
+                  name: login
+                  value: "Salex2608"
+              - column:
+                  name: password
+                  value: "gavrusha12"
