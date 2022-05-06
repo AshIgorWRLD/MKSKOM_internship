@@ -32,11 +32,14 @@ public class SongsController {
 
     @GetMapping("/{id}")
     public List<SongData> getSongs(@PathVariable("id") Long id){
+        log.info("request for getting songs for person with id {}", id);
 
         RestTemplate restTemplate = new RestTemplate();
 
         Person person = personRepo.findById(id).get();
+
         log.info("user was found: " + person.getName());
+
         Song song1 = new Song();
         song1.setUserLogin(person.getLogin());
 

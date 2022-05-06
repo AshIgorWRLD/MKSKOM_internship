@@ -34,6 +34,8 @@ public class PlaylistController {
     @GetMapping
     @ApiOperation("Получение списка музыки")
     public ResponseEntity<List<Song>> list(){
+        log.info("request for getting all songs");
+
         List<Song> songs = musicRepo.findAll();
         if(songs.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -45,6 +47,8 @@ public class PlaylistController {
     @GetMapping("id/{id}")
     @ApiOperation("Получение музыки по id")
     public ResponseEntity<Song> getOne(@PathVariable("id") long id) {
+        log.info("request for getting song with id {}", id);
+
         Song song = musicRepo.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Not found song with id = " + id));
 
@@ -54,6 +58,8 @@ public class PlaylistController {
     @GetMapping("login/{login}")
     @ApiOperation("Получение музыки по логину")
     public ResponseEntity<List<Song>> getOneByLogin(@PathVariable("login") String login) {
+        log.info("request for getting all songs by login {}", login);
+
         List<Song> songs = musicRepo.findByUserLogin(login);
 
         return new ResponseEntity<>(songs, HttpStatus.OK);
@@ -62,6 +68,7 @@ public class PlaylistController {
     @PostMapping("search")
     @ApiOperation("Получение музыки по автору")
     public ResponseEntity<List<Song>> getOneByAuthor(@RequestBody Song song) {
+        log.info("request of getting all songs by author {}", song.getAuthor());
 
         List<Song> songs = musicRepo.findAll(Example.of(song));
         return new ResponseEntity<>(songs, HttpStatus.OK);
@@ -79,6 +86,8 @@ public class PlaylistController {
     @ApiOperation("Обновление информации о существующей музыке")
     public ResponseEntity<Song> update(@PathVariable("id") long id,
                                          @Valid @RequestBody Song song){
+        log.info("request for updating song by id {} with parameters {}", id, song);
+
         Song songFromDataBase = musicRepo.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Not found song with id = " + id));
         log.info("Song from data base: " + songFromDataBase);
@@ -90,6 +99,8 @@ public class PlaylistController {
     @DeleteMapping("{id}")
     @ApiOperation("Удаление музыки")
     public ResponseEntity<HttpStatus> delete(@PathVariable("id") Song song) {
+        log.info("request for deleting song by id {}", song.getId());
+
         musicRepo.delete(song);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
@@ -97,6 +108,8 @@ public class PlaylistController {
     @DeleteMapping
     @ApiOperation("Удаление всей музыки")
     public ResponseEntity<HttpStatus> deleteAll(){
+        log.info("request for deleting all songs");
+
         musicRepo.deleteAll();
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }

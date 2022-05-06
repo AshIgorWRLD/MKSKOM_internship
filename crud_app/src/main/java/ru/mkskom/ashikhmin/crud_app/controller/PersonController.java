@@ -38,6 +38,8 @@ public class PersonController {
     @GetMapping
     @ApiOperation("Получение списка пользователей")
     public ResponseEntity<List<Person>> list(){
+        log.info("request for getting all people");
+
         List<Person> people = personRepo.findAll();
         if(people.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -49,8 +51,11 @@ public class PersonController {
     @GetMapping("{id}")
     @ApiOperation("Получение пользователя по id")
     public ResponseEntity<Person> getOne(@PathVariable("id") long id) {
+        log.info("request for getting person with id: {}", id);
+
         Person person = personRepo.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Not found person with id = " + id));
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "Not found person with id = " + id));
 
         return new ResponseEntity<>(person, HttpStatus.OK);
     }
@@ -67,6 +72,8 @@ public class PersonController {
     @ApiOperation("Обновление информации о существующем пользователе")
     public ResponseEntity<Person> update(@PathVariable("id") long id,
                                          @Valid @RequestBody Person person){
+        log.info("request for updating person by id {} with parameters {}", id, person);
+
         Person personFromDataBase = personRepo.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Not found person with id = " + id));
         log.info("Person from data base: " + personFromDataBase);
@@ -78,6 +85,9 @@ public class PersonController {
     @DeleteMapping("{id}")
     @ApiOperation("Удаление пользователя")
     public ResponseEntity<HttpStatus> delete(@PathVariable("id") Person person) {
+
+        log.info("request for deleting person with parameters {}", person);
+
         personRepo.delete(person);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
@@ -85,6 +95,7 @@ public class PersonController {
     @DeleteMapping
     @ApiOperation("Удаление всех пользователей")
     public ResponseEntity<HttpStatus> deleteAll(){
+        log.info("request for deleting all people");
         personRepo.deleteAll();
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
